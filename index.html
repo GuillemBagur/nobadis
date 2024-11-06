@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>No badis! - La aplicación que te ahorrará tiempo</title>
+    <meta name="description" content="No badis! es una aplicación, visualmente muy atractiva, que te servirá para poder usar las redes sociales para buscar información sin despistarte entre tanto contenido.">
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  </head>
+  <body>
+    <svg width="10" height="10" viewBox="0 0 10 10">
+      <clipPath id="squircleClip" clipPathUnits="objectBoundingBox">
+          <path
+            fill="red"
+            stroke="none"
+            d="M 0,0.5 C 0,0 0,0 0.5,0 S 1,0 1,0.5 1,1 0.5,1 0,1 0,0.5"
+          />
+        </clipPath>
+    </svg>
+
+    <div class="bubble main-bubble" id="bubble-1"></div>
+    <div class="bubble secondary-bubble" id="bubble-2"></div>
+    <div class="bubble secondary-bubble" id="bubble-3"></div>
+    <div class="bubble main-bubble" id="bubble-4"></div>
+    <div class="bubble main-bubble" id="bubble-5"></div>
+
+    <div class="wrapper-shadow">
+      <div class="wrapper">
+        <div class="menu topleft">
+          <ul>
+            <li><div class="menu-btn" onclick="loadHistory(); toggleHistory();"><i class="icofont-history"></i></div></li>
+          </ul>
+          <div id="history-container" class="history-container height-0 panel">
+            <ul id="history" class="history"></ul>
+          </div>
+        </div>
+        
+        <div class="menu topright">
+          <ul>
+            <li><div><div class="checkbox checked ld-theme" onclick="toggleChecked(this)" id="ld-theme"><div class="darkside"></div></div> <input name="ld-theme" type="checkbox"></div></li>
+          </ul>
+        </div>
+  
+        <div class="menu bottomright">
+          <ul>
+            <li><div class="menu-btn"><i class="icofont-info-circle"></i></div></li>
+          </ul>
+          <div class="panel">
+            <i>No badis</i> es un atajo digital, para que puedas usar productivamente las redes sociales,
+            sin que te atrape la curiosidad del contenido recomendado.
+            <br>
+            <br>
+            Para empezar a ahorrar tiempo y ser
+            más productivo en el trabajo, simplemente realiza tus búsquedas desde aquí. Te llevarán directamente a los resultados.
+          </div>
+        </div>
+        
+        <div id="container" class="container">
+          <div id="liquids-container" class="liquid-rows-container">
+            <div id="part1" class="part part1">
+              <div class="liquid-row row1"></div>
+              <div class="liquid-row row2"></div>
+              <div class="liquid-row row3"></div>
+              <div class="liquid-row row4"></div>
+              <div class="liquid-row row5"></div>
+              <div class="liquid-row row6"></div>
+              <div class="liquid-row row7"></div>
+              <div class="liquid-row row8"></div>
+              <div class="liquid-row row9"></div>
+            </div>
+            
+            <div id="part2" class="part part2">
+              <div class="liquid-row row1"></div>
+              <div class="liquid-row row2"></div>
+              <div class="liquid-row row3"></div>
+              <div class="liquid-row row4"></div>
+              <div class="liquid-row row5"></div>
+              <div class="liquid-row row6"></div>
+              <div class="liquid-row row7"></div>
+              <div class="liquid-row row8"></div>
+              <div class="liquid-row row9"></div>
+            </div>
+  
+            
+          </div>
+  
+          <i id="background-icon"></i>
+          <div class="form">
+            <h1>No badis!</h1>
+            <div class="backdrop-blur">
+              <input type="text" autocomplete="off" id="query" class="query input margin-bottom" placeholder="Escribe aquí para buscar">
+            </div>
+            <input type="text" id="portal" class="hidden">
+            
+            <button class="select">
+              <div class="backdrop-blur">
+                <div class="input" id="picked-portal">YouTube<i class="down-arrow icofont-rounded-down"></i></div>
+                
+              </div>
+              <div class="options backdrop-blur">
+                <ul class="select-portal">
+                  <li value="YouTube" onclick="changePortalVal(this.querySelector('.portal').innerHTML)"><i class="icofont-youtube-play"></i><i class="icofont-location-arrow arrow agent"></i><span class="portal">YouTube</span></li>
+                  <li value="Twitter" onclick="changePortalVal(this.querySelector('.portal').innerHTML)"><i class="icofont-twitter"></i><span class="portal">Twitter</span></li>
+                  <li value="Pinterest" onclick="changePortalVal(this.querySelector('.portal').innerHTML)"><i class="icofont-pinterest"></i><span class="portal">Pinterest</span></li>
+                </ul>
+              </div>
+            </button>
+            <div id="btn-container" class="backdrop-blur btn disabled">
+              <a onclick="scrape()" href="https://www.youtube.com/results?search_query=youtube" target="_blank" id="btn">Click</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="search-results">
+          <div id="results">
+            asdffd
+          </div>
+        </div>  
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+  </script>
+</html>
